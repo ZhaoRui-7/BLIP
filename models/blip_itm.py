@@ -64,7 +64,7 @@ class BLIP_ITM(nn.Module):
             text_feat = F.normalize(self.text_proj(text_output.last_hidden_state[:,0,:]),dim=-1)    
             
             # sim = image_feat @ text_feat.t()
-            return text_feat,text_feat
+            return text_feat,image_feat
         
         
 def blip_itm(pretrained='',**kwargs):
